@@ -67,14 +67,9 @@ app.get('/listGoal', function(req, res){
     });
 });
 
-//return createTask.html file to caller
-app.get('/createTask', function(req, res){
-    res.sendFile('public/html/createTask.html', {root: __dirname});
-});
-
-//return createHabit.html file to caller
-app.get('/createHabit', function(req, res){
-    res.sendFile('public/html/createHabit.html', {root: __dirname});
+//return home.html file to caller
+app.get('/home', function(req, res){
+    res.sendFile('public/html/home.html', {root: __dirname});
 });
 
 //accept path "createTask"

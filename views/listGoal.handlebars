@@ -2,11 +2,16 @@
 
 <h1> My Goals</h1>
 
-{{#each allGoals}}
-<div class="goalBox">
-    <div class="goalTitleBox">{{goalName}}</div>
 
-</div>
+{{#each allGoals}}
+
+    <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+        <div class="card-header" >{{goalName}}</div>
+        <div class="card-body">
+            <h5 class="card-title">Tag: {{tag}}</h5>
+            <p class="card-text">Description: {{goalDescription}}</p>
+        </div>
+    </div>
 
 {{/each}}
 
