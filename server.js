@@ -24,7 +24,7 @@ var goalSchema = new Schema({
     goalName: String,
     goalDescription: String,
     tag: String,
-    progressUnit: Number,
+    unitName: String,
     totalUnit: Number,
     startDate: Date,
     projectLength: Number,
@@ -50,24 +50,31 @@ var exphbs = require('express-handlebars');
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
+//register public folder which stores static files
+app.use(express.static('public'));
+
 //return list of goals to caller
 app.get('/listGoal', function(req, res){
     goalModel.find().exec(function(err, goals){
         if(err){
             console.log(err);
         }
-        res.render('listGoal')
+        //res.render('listGoal', goals)
+        //var objectArray = [{ aNumber: 70, aString:"testing"} , { aNumber: 5, aString:" another string"}];
+        var result = {allGoals: goals}
+        res.render('listGoal', result)
+
     });
 });
 
 //return createTask.html file to caller
 app.get('/createTask', function(req, res){
-    res.sendFile('createTask.html', {root: __dirname});
+    res.sendFile('public/html/createTask.html', {root: __dirname});
 });
 
 //return createHabit.html file to caller
 app.get('/createHabit', function(req, res){
-    res.sendFile('createHabit.html', {root: __dirname});
+    res.sendFile('public/html/createHabit.html', {root: __dirname});
 });
 
 //accept path "createTask"
@@ -79,7 +86,7 @@ app.post('/createTask', function(req, res) {
         goalName: req.body.goalName, 
         goalDescription: req.body.goalDescription,
         tag:req.body.tag,
-        progressUnit: req.body.progressUnit,
+        unitName: req.body.unitName,
         totalUnit: req.body.totalUnit,
         startDate: req.body.startDate,
         projectLength: req.body.projectLength,
