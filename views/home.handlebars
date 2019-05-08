@@ -1,0 +1,166 @@
+<!-- Button trigger modal: CREATE ONE TIME TASK -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createTaskModal">
+    Create One-time Task
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="createTaskModal" tabindex="-1" role="dialog" aria-labelledby="createTaskModal"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+
+            <!-- modal header -->
+            <div class="modal-header">
+                <h5 class="modal-title" id="createTaskModal">One-time Task</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <!-- modal body -->
+            <div class="modal-body">
+                <form action="http://127.0.0.1:8080/createTask" method="post">
+
+                    <div class="form-group row">
+                        <label for="inputTaskName" class="col-sm-4 col-form-label">Task Name</label>
+                        <div class="col-sm-8">
+                            <input type="text" name="goalName" class="form-control" id="inputTaskName"
+                                placeholder="e.g. Hawaii Saving">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="inputTaskDescription" class="col-sm-4 col-form-label">Task Description</label>
+                        <div class="col-sm-8">
+                            <input type="text" name="goalDescription" class="form-control" id="inputTaskDescription"
+                                placeholder="e.g. saving plan for Hawaii trip at June">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="inputTag" class="col-sm-4 col-form-label">Tag</label>
+                        <div class="col-sm-8">
+                            <input type="text" name="tag" class="form-control" id="inputTag" placeholder="e.g. Saving">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="inputTotalUnit" class="col-sm-4 col-form-label">Total Unit</label>
+                        <div class="col-sm-8">
+                            <input type="text" name="totalUnit" class="form-control" id="inputTotalUnit"
+                                placeholder="e.g. 2000">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="inputUnitName" class="col-sm-4 col-form-label">Unit Name</label>
+                        <div class="col-sm-8">
+                            <input type="text" name="unitName" class="form-control" id="inputUnitName"
+                                placeholder="e.g. dollars">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="inputStartDate" class="col-sm-4 col-form-label">Start Date</label>
+                        <div class="col-sm-8">
+                            <input type="date" name="startDate" class="form-control" id="inputStartDate">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="inputProjectLength" class="col-sm-4 col-form-label">Project Length (days)</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="inputProjectLength" placeholder="60 (days)">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+                    <button type="button" class="btn btn-secondary btn-lg btn-block"
+                        data-dismiss="modal">Cancel</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Button trigger modal: CREATE HABIT -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createHabitModal">
+    Create Habit
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="createHabitModal" tabindex="-1" role="dialog" aria-labelledby="createHabitModal"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+
+            <!-- modal header -->
+            <div class="modal-header">
+                <h5 class="modal-title" id="createHabitModal">Habit</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <!-- modal body -->
+            <div class="modal-body">
+                <form action="http://127.0.0.1:8080/createHabit" method="post">
+
+                    <div class="form-group row">
+                        <label for="inputHabitName" class="col-sm-4 col-form-label">Task Name</label>
+                        <div class="col-sm-8">
+                            <input type="text" name="goalName" class="form-control" id="inputHabitName"
+                                placeholder="e.g. Drink water">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="inputTaskDescription" class="col-sm-4 col-form-label">Task Description</label>
+                        <div class="col-sm-8">
+                            <input type="text" name="goalDescription" class="form-control" id="inputHabitDescription"
+                                placeholder="e.g. drink 6 cups a day">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="inputTag" class="col-sm-4 col-form-label">Tag</label>
+                        <div class="col-sm-8">
+                            <input type="text" name="tag" class="form-control" id="inputTag" placeholder="e.g. health">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="inputFrequency" class="col-sm-4 col-form-label">Frequency</label>
+                        <div class="col-sm-8">
+                            <input type="text" name="frequency" class="form-control" id="inputFrequency"
+                                placeholder="e.g. 6 (times)">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="inputFrequency" class="col-sm-4 col-form-label">Time Period</label>
+                        <div class="col-sm-8">
+                            <select name="timeperiod">
+                                <option value="daily">Daily</option>
+                                <option value="weekly">Weekly</option>
+                                <option value="monthly">Monthly</option>
+                                <option value="yearly">Yearly</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="inputStartDate" class="col-sm-4 col-form-label">Start Date</label>
+                        <div class="col-sm-8">
+                            <input type="date" name="startDate" class="form-control" id="inputStartDate">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+                    <button type="button" class="btn btn-secondary btn-lg btn-block"
+                        data-dismiss="modal">Cancel</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

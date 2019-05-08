@@ -59,8 +59,6 @@ app.get('/listGoal', function(req, res){
         if(err){
             console.log(err);
         }
-        //res.render('listGoal', goals)
-        //var objectArray = [{ aNumber: 70, aString:"testing"} , { aNumber: 5, aString:" another string"}];
         var result = {allGoals: goals}
         res.render('listGoal', result)
 
@@ -69,12 +67,11 @@ app.get('/listGoal', function(req, res){
 
 //return home.html file to caller
 app.get('/home', function(req, res){
-    res.sendFile('public/html/home.html', {root: __dirname});
+    res.render('home');  
 });
 
 //accept path "createTask"
 app.post('/createTask', function(req, res) {
-    res.send('Congratulation! You have just created "' + req.body.goalName + '".');
 
     //create new goal instance and save into database
     var newGoal = new goalModel({
@@ -93,8 +90,9 @@ app.post('/createTask', function(req, res) {
         if(err){
             console.log(err);
         }
-  })
+    });
 
+    res.redirect('/listGoal');
 });
 
 //accept path "createHabit"

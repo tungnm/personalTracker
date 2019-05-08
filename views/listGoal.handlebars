@@ -1,17 +1,19 @@
-<link rel="stylesheet" type="text/css" href="/css/listGoal.css"/>
-
-<h1> My Goals</h1>
+<link rel="stylesheet" type="text/css" href="/css/listGoal.css" />
 
 
-{{#each allGoals}}
-
-    <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
-        <div class="card-header" >{{goalName}}</div>
+<div class="card-columns">
+    {{#each allGoals}}
+    <div class="card">
         <div class="card-body">
-            <h5 class="card-title">Tag: {{tag}}</h5>
-            <p class="card-text">Description: {{goalDescription}}</p>
+            <h5 class="card-title">{{goalName}}</h5>
+            <p class="card-text">{{goalDescription}}</p>
+            <p class="card-text"><small class="text-muted">{{tag}}</small></p>
+
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0"
+                    aria-valuemax="100">25%</div>
+            </div>
         </div>
     </div>
-
-{{/each}}
-
+    {{/each}}
+</div>
