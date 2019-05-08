@@ -65,9 +65,14 @@ app.get('/listGoal', function(req, res){
     });
 });
 
-//return home.html file to caller
+//return home page file to caller
 app.get('/home', function(req, res){
     res.render('home');  
+});
+
+//return about page to caller
+app.get('/about', function(req, res){
+    res.render('about');
 });
 
 //accept path "createTask"
