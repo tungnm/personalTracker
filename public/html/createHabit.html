@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Create Habit</h2>
+
+<form action="http://127.0.0.1:8080/createHabit" method="post">
+    Goal Name:<br>
+    <input type="text" name="goalName">
+    <br><br>
+    Goal Description:<br>
+    <input type="text" name="goalDescription">
+    <br><br>
+    Tag:<br>
+    <input type="text" name="tag">
+    <br><br>
+    Frequency:<br>
+    <input type="text" name="frequency">
+    <br><br>
+    Time Period:<br>
+    <select name="timePeriod">
+        <option value="daily">Daily</option>
+        <option value="weekly">Weekly</option>
+        <option value="monthly">Monthly</option>
+        <option value="yearly">Yearly</option>
+    </select>
+    <br><br>
+    Start Date:<br>
+    <input type="date" id="start" name="startDate">
+    <br><br>
+    <input type="submit" value="Submit">
+</form> 
+
+</body>
+</html>

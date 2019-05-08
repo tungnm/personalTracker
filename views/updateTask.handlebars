@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Update One-Time Task</h2>
+<form action="http://127.0.0.1:8080/updateTask?id={{goal._id}}" method="post">
+    Goal Name:<br>
+    <input type="text" name="goalName" value="{{goal.goalName}}">
+    <br><br>
+    Goal Description:<br>  
+    <input type="text" name="goalDescription" value="{{goal.goalDescription}}">
+    <br><br>
+    Tag:<br>
+    <input type="text" name="tag" value="{{goal.tag}}">
+    <br><br>
+    Total Unit:<br>
+    <input type="text" name="totalUnit" value="{{goal.totalUnit}}">
+    <br><br>
+    Unit Name:<br>
+    <input type="text" name="unitName" value="{{goal.unitName}}">
+    <br><br>
+    Start Date:<br>
+    <input type="date" id="start" name="startDate" value="{{date}}">
+    <br><br>
+    Project Length (days):<br>
+    <input type="text" name="projectLength" value="{{goal.projectLength}}">
+    <br><br>
+    <input type="submit" value="Update">
+</form> 
+
+</body>
+</html>

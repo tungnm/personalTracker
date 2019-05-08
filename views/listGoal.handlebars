@@ -1,6 +1,5 @@
 <link rel="stylesheet" type="text/css" href="/css/listGoal.css" />
 
-
 <div class="card-columns">
     {{#each allGoals}}
     <div class="card">
@@ -17,3 +16,44 @@
     </div>
     {{/each}}
 </div>
+
+<h1> My Goals</h1>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>GoalName</th>
+        <th>GoalDescription</th>
+        <th>Tag</th>
+        <th>UnitName</th>
+        <th>TotalUnit</th>
+        <th>StartDate</th>
+        <th>ProjectLength</th>
+        <th>IsTask</th>
+        <th>frequency</th>
+        <th>timePeriod</th>
+        <th>Operations</th>
+    </tr>
+{{#each allGoals}}
+<tr>
+    <td>{{_id}}</td>
+    <td>{{goalName}}</td>
+    <td>{{goalDescription}}</td>
+    <td>{{tag}}</td>
+    <td>{{unitName}}</td>
+    <td>{{totalUnit}}</th>
+    <td>{{startDate}}</td>
+    <td>{{projectLength}}</td>
+    <td>{{isTask}}</td>
+    <td>{{frequency}}</td>
+    <td>{{timePeriod}}</td>
+    <td>{{#if isTask}}
+        <a href="http://127.0.0.1:8080/updateTask?id={{_id}}">update</a>
+        {{else}}
+        <a href="http://127.0.0.1:8080/updateHabit?id={{_id}}">update</a>
+        {{/if}}
+        </td>
+</tr>
+{{/each}}
+
+</table>
+
